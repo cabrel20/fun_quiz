@@ -1,15 +1,15 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+
+import Home from "./components/molecules/Home";
+import Questions from "./components/molecules/Questions";
 
 function App() {
+  const [viewHome, setViewHome] = useState(true);
   return (
-    <>
-      <p className="text-3xl font-bold text-gray-700 text-center">
-        Hello world
-      </p>
-    </>
+    <div>
+      {viewHome && <Home onClick={() => setViewHome(false)} />}
+      {!viewHome && <Questions />}
+    </div>
   );
 }
 
